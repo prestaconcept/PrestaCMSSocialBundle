@@ -1,6 +1,11 @@
 PrestaCMSSocialBundle
 =====================
 
+[![Build Status](https://secure.travis-ci.org/prestaconcept/PrestaCMSSocialBundle.png?branch=master)](http://travis-ci.org/prestaconcept/PrestaCMSSocialBundle)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/prestaconcept/PrestaCMSSocialBundle/badges/quality-score.png?s=a5721c174fead4cb642be18f44965d15d024333c)](https://scrutinizer-ci.com/g/prestaconcept/PrestaCMSSocialBundle/)
+[![Latest Stable Version](https://poser.pugx.org/presta/cms-social-bundle/v/stable.png)](https://packagist.org/packages/presta/cms-social-bundle)
+[![Total Downloads](https://poser.pugx.org/presta/cms-social-bundle/downloads.png)](https://packagist.org/packages/presta/cms-social-bundle)
+
 #Overview #
 
 [WIP] Add social to PrestaCMS
