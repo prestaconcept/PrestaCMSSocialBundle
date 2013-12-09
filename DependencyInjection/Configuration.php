@@ -23,7 +23,20 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('presta_cms_social');
+        $rootNode = $treeBuilder->root('presta_cms_social');
+
+        $rootNode
+            ->children()
+                ->arrayNode('twitter')
+                    ->children()
+                        ->scalarNode('url')->end()
+                        ->scalarNode('consumer_key')->end()
+                        ->scalarNode('consumer_secret')->end()
+                        ->scalarNode('token')->end()
+                        ->scalarNode('token_secret')->end()
+                    ->end()
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }

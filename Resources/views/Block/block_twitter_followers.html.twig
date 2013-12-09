@@ -1,0 +1,18 @@
+{% extends 'PrestaCMSCoreBundle:Block:base_block.html.twig' %}
+
+{% trans_default_domain "PrestaCMSSocialBundle" %}
+
+{% block block %}
+    {% if settings.twitter_username is defined %}
+        <div class="prestacms-twitter-followers">
+            {% if has_exception is not defined or has_exception == false %}
+                <a href="https://www.twitter.com/{{ settings.twitter_username }}" target="_blank">
+                    <strong>Twitter</strong>
+                    <span>{{ followers_count }} followers</span>
+                </a>
+            {% else %}
+                {{ "presta_cms_social.twitter.followers.exception" | trans({ '%username%': settings.twitter_username }) }}
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}
