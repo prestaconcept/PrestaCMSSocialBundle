@@ -2,9 +2,9 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
     <file source-language="en" target-language="fr" datatype="plaintext" original="PrestaCMSSocialBundle.en.xliff">
         <body>
-            <trans-unit id="presta_cms_social.twitter.followers.exception">
-                <source>presta_cms_social.twitter.followers.exception</source>
-                <target>Impossible de trouver le nombre de followers pour l'utilisateur : "%username%"</target>
+            <trans-unit id="presta_cms_social.block.twitter.followers_count.title">
+                <source>presta_cms_social.block.twitter.followers_count.title</source>
+                <target>Twitter</target>
             </trans-unit>
         </body>
     </file>

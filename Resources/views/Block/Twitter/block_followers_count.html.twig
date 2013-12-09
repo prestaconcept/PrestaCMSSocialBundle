@@ -1,0 +1,14 @@
+{% extends 'PrestaCMSCoreBundle:Block:base_block.html.twig' %}
+
+{% trans_default_domain "PrestaCMSSocialBundle" %}
+
+{% block block %}
+    {% if followers_count is defined %}
+        <div class="prestacms-twitter-followers-count">
+            <a href="https://www.twitter.com/{{ settings.twitter_username }}" target="_blank">
+                <strong>{{ "presta_cms_social.block.twitter.followers_count.title" | trans }}</strong>
+                <span>{{ followers_count }} followers</span>
+            </a>
+        </div>
+    {% endif %}
+{% endblock %}

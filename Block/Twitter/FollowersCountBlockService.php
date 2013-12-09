@@ -19,7 +19,10 @@ use Sonata\BlockBundle\Model\BlockInterface;
  */
 class FollowersCountBlockService extends BaseBlockService
 {
-    protected $template = 'PrestaCMSSocialBundle:Block:block_twitter_followers.html.twig';
+    /**
+     * @var string
+     */
+    protected $template = 'PrestaCMSSocialBundle:Block/Twitter:block_followers_count.html.twig';
 
     /**
      * @var TwitterManager
@@ -58,16 +61,30 @@ class FollowersCountBlockService extends BaseBlockService
      */
     protected function getAdditionalViewParameters(BlockInterface $block)
     {
-        $viewParameters = array('follower_count' => 0);
+        if (null === $block->getSetting('twitter_username')) {
+            return array();
+        }
+
+        $viewParameters = array();
 
         try {
-            $viewParameters['follower_count'] = $this->twitterManager->countFollowers(
+            $viewParameters['followers_count'] = $this->twitterManager->getFollowersCount(
                 $block->getSetting('twitter_username')
             );
         } catch (\RuntimeException $e) {
-            $viewParameters['has_exception'] = true;
+
         }
 
         return $viewParameters;
+    }
+
+    /**
+     * @return array
+     */
+    public function getDefaultSettings()
+    {
+        return array(
+            'twitter_username' => null,
+        );
     }
 }

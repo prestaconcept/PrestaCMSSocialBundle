@@ -36,16 +36,16 @@ class TwitterManager
      *
      * @return int
      */
-    public function countFollowers($username)
+    public function getFollowersCount($username)
     {
         $parameters = array('screen_name' => $username);
 
         try {
             $response = $this->client->get('users/show.json?' . http_build_query($parameters))->send()->json();
         } catch (\Exception $e) {
-            throw new \RuntimeException(sprintf("Unable to find the twitter user with username %s", $username));
+            throw new \RuntimeException(sprintf('Unable to find the twitter user with username %s', $username));
         }
 
-        return !isset($response["followers_count"]) ? 0 : $response["followers_count"];
+        return !isset($response['followers_count']) ? 0 : $response['followers_count'];
     }
 }

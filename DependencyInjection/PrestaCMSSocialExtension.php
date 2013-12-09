@@ -31,12 +31,12 @@ class PrestaCMSSocialExtension extends Extension
         $loader->load('block.xml');
         $loader->load('services.xml');
 
-        if (isset($config["twitter"])) {
-            $container->setParameter('presta_cms_social.twitter.url', $config["twitter"]["url"]);
-            $container->setParameter('presta_cms_social.twitter.consumer_key', $config["twitter"]["consumer_key"]);
-            $container->setParameter('presta_cms_social.twitter.consumer_secret', $config["twitter"]["consumer_secret"]);
-            $container->setParameter('presta_cms_social.twitter.token', $config["twitter"]["token"]);
-            $container->setParameter('presta_cms_social.twitter.token_secret', $config["twitter"]["token_secret"]);
+        if (isset($config['twitter'])) {
+            $container->setParameter('presta_cms_social.twitter.url', $config['twitter']['url']);
+            $container->setParameter('presta_cms_social.twitter.consumer_key', $config['twitter']['consumer_key']);
+            $container->setParameter('presta_cms_social.twitter.consumer_secret', $config['twitter']['consumer_secret']);
+            $container->setParameter('presta_cms_social.twitter.token', $config['twitter']['token']);
+            $container->setParameter('presta_cms_social.twitter.token_secret', $config['twitter']['token_secret']);
         }
     }
 }
