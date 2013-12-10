@@ -6,6 +6,11 @@
                 <source>presta_cms_social.block.twitter.followers_count.title</source>
                 <target>Twitter</target>
             </trans-unit>
+
+            <trans-unit id="presta_cms_social.block.twitter.followers_count.text">
+                <source>presta_cms_social.block.twitter.followers_count.text</source>
+                <target>{0} 0 followers|{1} 1 follower | ]1, Inf]%followers_count% followers</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
