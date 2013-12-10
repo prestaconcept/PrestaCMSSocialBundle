@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" target-language="fr" datatype="plaintext" original="PrestaCMSCoreBundle.en.xliff">
+        <body>
+            <trans-unit id="block.title.presta_cms_social.block.twitter.followers_count">
+                <source>block.title.presta_cms_social.block.twitter.followers_count</source>
+                <target>Nombre de followers twitter</target>
+            </trans-unit>
+
+            <trans-unit id="block.description.presta_cms_social.block.twitter.followers_count">
+                <source>block.description.presta_cms_social.block.twitter.followers_count</source>
+                <target>Affiche votre nombre de followers twitter</target>
+            </trans-unit>
+
+            <trans-unit id="form.label_twitter_username">
+                <source>form.label_twitter_username</source>
+                <target>Identifiant twitter</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
