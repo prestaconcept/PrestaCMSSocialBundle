@@ -7,6 +7,9 @@
         <parameter key="guzzle.client.class">Guzzle\Http\Client</parameter>
         <parameter key="guzzle.plugin.oauth.class">Guzzle\Plugin\Oauth\OauthPlugin</parameter>
         <parameter key="presta_cms_social.manager.twitter.class">Presta\CMSSocialBundle\Model\TwitterManager</parameter>
+        <parameter key="presta_cms_social.parser.twitter.tweet_parser.class">Presta\CMSSocialBundle\Parser\Twitter\TweetParser</parameter>
+        <parameter key="presta_cms_social.helper.twitter.urlize_tweet_helper.class">Presta\CMSSocialBundle\Helper\Twitter\UrlizeTweetHelper</parameter>
+        <parameter key="presta_cms_social.twig.extension.urlize_tweet.class">Presta\CMSSocialBundle\Twig\Extension\UrlizeTweetTwigExtension</parameter>
     </parameters>
 
     <services>
@@ -28,6 +31,15 @@
 
         <service id="presta_cms_social.manager.twitter" class="%presta_cms_social.manager.twitter.class%">
             <argument type="service" id="guzzle.client.twitter" />
+        </service>
+
+        <service id="presta_cms_social.parser.twitter.tweet_parser" class="%presta_cms_social.parser.twitter.tweet_parser.class%" />
+
+        <service id="presta_cms_social.helper.twitter.urlize_tweet_helper" class="%presta_cms_social.helper.twitter.urlize_tweet_helper.class%" />
+
+        <service id="presta_cms_social.twig.extension.urlize_tweet" class="%presta_cms_social.twig.extension.urlize_tweet.class%">
+            <tag name="twig.extension" />
+            <argument type="service" id="presta_cms_social.helper.twitter.urlize_tweet_helper" />
         </service>
     </services>
 

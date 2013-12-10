@@ -5,6 +5,7 @@
 
     <parameters>
         <parameter key="presta_cms_social.block.twitter.followers_count.class">Presta\CMSSocialBundle\Block\Twitter\FollowersCountBlockService</parameter>
+        <parameter key="presta_cms_social.block.twitter.latest_tweets.class">Presta\CMSSocialBundle\Block\Twitter\LatestTweetBlockService</parameter>
     </parameters>
 
     <services>
@@ -14,6 +15,18 @@
 
             <call method="setTwitterManager">
                 <argument type="service" id="presta_cms_social.manager.twitter" />
+            </call>
+        </service>
+
+        <service id="presta_cms_social.block.twitter.latest_tweets" class="%presta_cms_social.block.twitter.latest_tweets.class%" parent="presta_cms.block.base">
+            <tag name="sonata.block" />
+            <tag name="presta_cms.block" />
+
+            <call method="setTwitterManager">
+                <argument type="service" id="presta_cms_social.manager.twitter" />
+            </call>
+            <call method="setTweetParser">
+                <argument type="service" id="presta_cms_social.parser.twitter.tweet_parser" />
             </call>
         </service>
     </services>
