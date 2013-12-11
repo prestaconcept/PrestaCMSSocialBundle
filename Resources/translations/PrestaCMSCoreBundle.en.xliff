@@ -16,6 +16,32 @@
                 <source>form.label_twitter_username</source>
                 <target>Twitter username</target>
             </trans-unit>
+
+            <trans-unit id="block.title.presta_cms_social.block.twitter.latest_tweets">
+                <source>block.title.presta_cms_social.block.twitter.latest_tweets</source>
+                <target>Latest Tweets</target>
+            </trans-unit>
+
+            <trans-unit id="block.description.presta_cms_social.block.twitter.latest_tweets">
+                <source>block.description.presta_cms_social.block.twitter.latest_tweets</source>
+                <target>Displays your latest tweets</target>
+            </trans-unit>
+
+            <trans-unit id="form.label_tweet_limit">
+                <source>form.label_tweet_limit</source>
+                <target>Number of tweets to retrieve</target>
+            </trans-unit>
+
+            <trans-unit id="form.label_tweet_exclude_replies">
+                <source>form.label_tweet_exclude_replies</source>
+                <target>Exclude replies</target>
+            </trans-unit>
+
+            <trans-unit id="form.label_tweet_include_retweets">
+                <source>form.label_tweet_include_retweets</source>
+                <target>Include retweets</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

@@ -10,6 +10,7 @@
 namespace Presta\CMSSocialBundle\Model;
 
 use Guzzle\Http\Client;
+use Presta\CMSSocialBundle\Model\Twitter\Response\LatestTweetsResponse;
 
 /**
  * @author Benoît Lévêque <bleveque@prestaconcept.net>
@@ -47,5 +48,38 @@ class TwitterManager
         }
 
         return !isset($response['followers_count']) ? 0 : $response['followers_count'];
+    }
+
+    /**
+     * @param string $username
+     * @param int    $limit
+     * @param bool   $excludeReplies
+     * @param bool   $includeRetweets
+     *
+     * @throws \RuntimeException
+     *
+     * @return LatestTweetsResponse
+     */
+    public function getLatestTweet($username, $limit = 10, $excludeReplies = true, $includeRetweets = true)
+    {
+        $parameters = array(
+            'screen_name'     => $username,
+            'count'           => $limit,
+            'exclude_replies' => $excludeReplies,
+            'include_rts'     => $includeRetweets,
+        );
+
+        try {
+            $tweetsFromApi = $this->client
+                ->get('statuses/user_timeline.json?' . http_build_query($parameters))
+                ->send()
+                ->json();
+        } catch (\Exception $e) {
+            throw new \RuntimeException(
+                sprintf('Unable to load the latest %s tweets of the user with username %s', $limit, $username)
+            );
+        }
+
+        return new LatestTweetsResponse($tweetsFromApi);
     }
 }

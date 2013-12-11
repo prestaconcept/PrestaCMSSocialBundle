@@ -1,0 +1,17 @@
+{% extends 'PrestaCMSCoreBundle:Block:base_block.html.twig' %}
+
+{% trans_default_domain "PrestaCMSSocialBundle" %}
+
+{% block block %}
+    <div class="prestacms-twitter-latest-tweets">
+        {% if tweets %}
+            <ul>
+                {% for tweet in tweets %}
+                    <li>{{ tweet | tweet_urlize }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            {{ "presta_cms_social.block.latest_tweets.no_tweets" | trans }}
+        {% endif %}
+    </div>
+{% endblock %}
