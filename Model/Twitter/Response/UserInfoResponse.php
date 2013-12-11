@@ -24,7 +24,9 @@ class UserInfoResponse
      */
     public function __construct(array $userInfo)
     {
-        $this->userInfo = $userInfo;
+        $this->userInfo = $userInfo + array(
+           'followers_count' => 0,
+        );
     }
 
     /**
@@ -40,6 +42,6 @@ class UserInfoResponse
      */
     public function getFollowersCount()
     {
-        return isset($this->userInfo['followers_count']) ? $this->userInfo['followers_count'] : 0;
+        return $this->userInfo['followers_count'];
     }
 }
