@@ -11,6 +11,7 @@ namespace Presta\CMSSocialBundle\Model;
 
 use Guzzle\Http\Client;
 use Presta\CMSSocialBundle\Model\Twitter\Response\LatestTweetsResponse;
+use Presta\CMSSocialBundle\Model\Twitter\Response\UserInfoResponse;
 
 /**
  * @author Benoît Lévêque <bleveque@prestaconcept.net>
@@ -35,19 +36,19 @@ class TwitterManager
      *
      * @throws \RuntimeException
      *
-     * @return int
+     * @return UserInfoResponse
      */
-    public function getFollowersCount($username)
+    public function getUserInfo($username)
     {
         $parameters = array('screen_name' => $username);
 
         try {
-            $response = $this->client->get('users/show.json?' . http_build_query($parameters))->send()->json();
+            $userInfo = $this->client->get('users/show.json?' . http_build_query($parameters))->send()->json();
         } catch (\Exception $e) {
             throw new \RuntimeException(sprintf('Unable to find the twitter user with username %s', $username));
         }
 
-        return !isset($response['followers_count']) ? 0 : $response['followers_count'];
+        return new UserInfoResponse($userInfo);
     }
 
     /**
