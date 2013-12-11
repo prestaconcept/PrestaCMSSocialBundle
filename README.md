@@ -6,6 +6,10 @@ PrestaCMSSocialBundle
 [![Latest Stable Version](https://poser.pugx.org/presta/cms-social-bundle/v/stable.png)](https://packagist.org/packages/presta/cms-social-bundle)
 [![Total Downloads](https://poser.pugx.org/presta/cms-social-bundle/downloads.png)](https://packagist.org/packages/presta/cms-social-bundle)
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/c6c99c8b-0706-4b09-a7c4-f21d165cb7c3/big.png)](https://insight.sensiolabs.com/projects/c6c99c8b-0706-4b09-a7c4-f21d165cb7c3)
+
+[![knpbundles.com](http://knpbundles.com/prestaconcept/PrestaCMSSocialBundle/badge)](http://knpbundles.com/prestaconcept/PrestaCMSSocialBundle)
+
 #Overview #
 
 [WIP] Add social to PrestaCMS
