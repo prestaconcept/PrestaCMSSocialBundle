@@ -8,6 +8,7 @@ php:
 before_script:
   - pear install pear/PHP_CodeSniffer
   - phpenv rehash
+  - composer install --dev --prefer-source --no-interaction
 
 script:
   - phpcs --ignore=/vendor/* --extensions=php --encoding=utf-8 --standard=PSR2 -np .
