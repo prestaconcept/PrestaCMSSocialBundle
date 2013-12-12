@@ -68,9 +68,9 @@ class FollowersCountBlockService extends BaseBlockService
         $viewParameters = array();
 
         try {
-            $viewParameters['followers_count'] = $this->twitterManager->getFollowersCount(
+            $viewParameters['followers_count'] = $this->twitterManager->getUserInfo(
                 $block->getSetting('twitter_username')
-            );
+            )->getFollowersCount();
         } catch (\RuntimeException $e) {
 
         }
