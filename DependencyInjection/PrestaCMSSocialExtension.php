@@ -28,10 +28,10 @@ class PrestaCMSSocialExtension extends Extension
         $config = $this->processConfiguration($configuration, $config);
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-        $loader->load('block.xml');
         $loader->load('services.xml');
 
         if (isset($config['twitter'])) {
+            $loader->load('twitter.xml');
             $container->setParameter(
                 'presta_cms_social.twitter.url',
                 $config['twitter']['url']

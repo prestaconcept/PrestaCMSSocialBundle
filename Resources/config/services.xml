@@ -6,41 +6,6 @@
     <parameters>
         <parameter key="guzzle.client.class">Guzzle\Http\Client</parameter>
         <parameter key="guzzle.plugin.oauth.class">Guzzle\Plugin\Oauth\OauthPlugin</parameter>
-        <parameter key="presta_cms_social.manager.twitter.class">Presta\CMSSocialBundle\Model\TwitterManager</parameter>
-        <parameter key="presta_cms_social.parser.twitter.tweet_parser.class">Presta\CMSSocialBundle\Parser\Twitter\TweetParser</parameter>
-        <parameter key="presta_cms_social.helper.twitter.urlize_tweet_helper.class">Presta\CMSSocialBundle\Helper\Twitter\UrlizeTweetHelper</parameter>
-        <parameter key="presta_cms_social.twig.extension.urlize_tweet.class">Presta\CMSSocialBundle\Twig\Extension\UrlizeTweetTwigExtension</parameter>
     </parameters>
-
-    <services>
-        <service id="guzzle.client.twitter" class="%guzzle.client.class%">
-            <argument>%presta_cms_social.twitter.url%</argument>
-            <call method="addSubscriber">
-                <argument type="service" id="guzzle.twitter.oauth" />
-            </call>
-        </service>
-
-        <service id="guzzle.twitter.oauth" class="%guzzle.plugin.oauth.class%">
-            <argument type="collection">
-                <argument key="consumer_key">%presta_cms_social.twitter.consumer_key%</argument>
-                <argument key="consumer_secret">%presta_cms_social.twitter.consumer_secret%</argument>
-                <argument key="token">%presta_cms_social.twitter.token%</argument>
-                <argument key="token_secret">%presta_cms_social.twitter.token_secret%</argument>
-            </argument>
-        </service>
-
-        <service id="presta_cms_social.manager.twitter" class="%presta_cms_social.manager.twitter.class%">
-            <argument type="service" id="guzzle.client.twitter" />
-        </service>
-
-        <service id="presta_cms_social.parser.twitter.tweet_parser" class="%presta_cms_social.parser.twitter.tweet_parser.class%" />
-
-        <service id="presta_cms_social.helper.twitter.urlize_tweet_helper" class="%presta_cms_social.helper.twitter.urlize_tweet_helper.class%" />
-
-        <service id="presta_cms_social.twig.extension.urlize_tweet" class="%presta_cms_social.twig.extension.urlize_tweet.class%">
-            <tag name="twig.extension" />
-            <argument type="service" id="presta_cms_social.helper.twitter.urlize_tweet_helper" />
-        </service>
-    </services>
 
 </container>
