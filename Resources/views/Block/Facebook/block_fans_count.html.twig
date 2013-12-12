@@ -1,0 +1,14 @@
+{% extends 'PrestaCMSCoreBundle:Block:base_block.html.twig' %}
+
+{% trans_default_domain "PrestaCMSSocialBundle" %}
+
+{% block block %}
+    {% if fans_count is defined %}
+        <div class="prestacms-facebook-fans-count">
+            <a href="https://www.facebook.com/{{ settings.facebook_page_id }}" target="_blank">
+                <strong>{{ "presta_cms_social.block.facebook.fans_count.title" | trans }}</strong>
+                <span>{{ "presta_cms_social.block.facebook.fans_count.text" | transchoice(fans_count, {"%fans_count%": fans_count | number_format_decimal }) }}</span>
+            </a>
+        </div>
+    {% endif %}
+{% endblock %}

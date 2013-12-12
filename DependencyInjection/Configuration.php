@@ -36,6 +36,12 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('token_secret')->end()
                     ->end()
                 ->end()
+                ->arrayNode('facebook')
+                    ->children()
+                        ->scalarNode('application_id')->end()
+                        ->scalarNode('application_secret')->end()
+                    ->end()
+                ->end()
             ->end();
 
         return $treeBuilder;

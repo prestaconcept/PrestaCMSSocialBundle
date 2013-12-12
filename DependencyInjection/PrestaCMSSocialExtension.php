@@ -53,5 +53,18 @@ class PrestaCMSSocialExtension extends Extension
                 $config['twitter']['token_secret']
             );
         }
+
+        if (isset($config['facebook'])) {
+            $loader->load('facebook.xml');
+
+            $container->setParameter(
+                'presta_cms_social.facebook.application_id',
+                $config['facebook']['application_id']
+            );
+            $container->setParameter(
+                'presta_cms_social.facebook.application_secret',
+                $config['facebook']['application_secret']
+            );
+        }
     }
 }
