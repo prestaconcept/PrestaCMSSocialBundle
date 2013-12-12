@@ -7,7 +7,7 @@
         <div class="prestacms-twitter-followers-count">
             <a href="https://www.twitter.com/{{ settings.twitter_username }}" target="_blank">
                 <strong>{{ "presta_cms_social.block.twitter.followers_count.title" | trans }}</strong>
-                <span>{{ "presta_cms_social.block.twitter.followers_count.text" | transchoice(followers_count, {"%followers_count%": followers_count }) }}</span>
+                <span>{{ "presta_cms_social.block.twitter.followers_count.text" | transchoice(followers_count, {"%followers_count%": followers_count | number_format_decimal }) }}</span>
             </a>
         </div>
     {% endif %}
