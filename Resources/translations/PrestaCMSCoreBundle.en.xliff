@@ -42,6 +42,21 @@
                 <target>Include retweets</target>
             </trans-unit>
 
+            <trans-unit id="block.title.presta_cms_social.block.facebook.fans_count">
+                <source>block.title.presta_cms_social.block.facebook.fans_count</source>
+                <target>The number of users who like your page on facebook</target>
+            </trans-unit>
+
+            <trans-unit id="block.description.presta_cms_social.block.facebook.fans_count">
+                <source>block.description.presta_cms_social.block.facebook.fans_count</source>
+                <target>Displays the number of users who like your page on facebook</target>
+            </trans-unit>
+
+            <trans-unit id="form.label_facebook_page_id">
+                <source>form.label_facebook_page_id</source>
+                <target>Page id</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

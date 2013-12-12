@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="facebook.sdk.class">Facebook</parameter>
+        <parameter key="presta_cms_social.manager.facebook.class">Presta\CMSSocialBundle\Model\FacebookManager</parameter>
+        <parameter key="presta_cms_social.block.facebook.fans_count.class">Presta\CMSSocialBundle\Block\Facebook\FansCountBlockService</parameter>
+    </parameters>
+
+    <services>
+        <service id="facebook.sdk" class="%facebook.sdk.class%">
+            <argument type="collection">
+                <argument key="appId">%presta_cms_social.facebook.application_id%</argument>
+                <argument key="secret">%presta_cms_social.facebook.application_secret%</argument>
+            </argument>
+        </service>
+
+        <service id="presta_cms_social.manager.facebook" class="%presta_cms_social.manager.facebook.class%">
+            <argument type="service" id="facebook.sdk"/>
+        </service>
+
+        <service id="presta_cms_social.block.facebook.fans_count" class="%presta_cms_social.block.facebook.fans_count.class%" parent="presta_cms.block.base">
+            <tag name="sonata.block" />
+            <tag name="presta_cms.block" />
+
+            <call method="setFacebookManager">
+                <argument type="service" id="presta_cms_social.manager.facebook" />
+            </call>
+        </service>
+    </services>
+</container>
