@@ -44,12 +44,12 @@
 
             <trans-unit id="block.title.presta_cms_social.block.facebook.fans_count">
                 <source>block.title.presta_cms_social.block.facebook.fans_count</source>
-                <target>Fans' count of your facebook page</target>
+                <target>The number of users who like your page on facebook</target>
             </trans-unit>
 
             <trans-unit id="block.description.presta_cms_social.block.facebook.fans_count">
                 <source>block.description.presta_cms_social.block.facebook.fans_count</source>
-                <target>Displays the number of your fan in facebook</target>
+                <target>Displays the number of users who like your page on facebook</target>
             </trans-unit>
 
             <trans-unit id="form.label_facebook_page_id">

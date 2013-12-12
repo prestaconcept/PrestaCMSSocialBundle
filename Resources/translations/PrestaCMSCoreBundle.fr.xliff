@@ -44,12 +44,12 @@
 
             <trans-unit id="block.title.presta_cms_social.block.facebook.fans_count">
                 <source>block.title.presta_cms_social.block.facebook.fans_count</source>
-                <target>Nombre de fan de votre page facebook</target>
+                <target>Nombre de personnes qui aiment votre page facebook</target>
             </trans-unit>
 
             <trans-unit id="block.description.presta_cms_social.block.facebook.fans_count">
                 <source>block.description.presta_cms_social.block.facebook.fans_count</source>
-                <target>Affiche le nombre de fan facebook</target>
+                <target>Affiche le nombre de personnes qui aiment votre page facebook</target>
             </trans-unit>
 
             <trans-unit id="form.label_facebook_page_id">
