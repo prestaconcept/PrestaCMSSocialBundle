@@ -57,6 +57,14 @@ class LatestTweetBlockService extends BaseBlockService
     protected function getAdditionalFormSettings(FormMapper $formMapper, BlockInterface $block)
     {
         $formSettings = array(
+            'title'            => array(
+                'title',
+                'text',
+                array(
+                    'required' => false,
+                    'label' => $this->trans('form.label_title')
+                )
+            ),
             'twitter_username' => array(
                 'twitter_username',
                 'text',
@@ -107,6 +115,7 @@ class LatestTweetBlockService extends BaseBlockService
             'limit'            => 10,
             'exclude_replies'  => true,
             'include_retweets' => true,
+            'title'            => $this->trans('block.title.presta_cms_social.block.twitter.latest_tweets'),
         );
     }
 
