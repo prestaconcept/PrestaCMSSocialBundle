@@ -4,6 +4,10 @@
 
 {% block block %}
     <div class="prestacms-twitter-latest-tweets">
+        {% if (settings.title|length) %}
+            <{{ settings.title_level }}>{{ settings.title|raw }}</{{ settings.title_level }}>
+        {% endif %}
+
         {% if tweets is defined and tweets %}
             <ul>
                 {% for tweet in tweets %}
