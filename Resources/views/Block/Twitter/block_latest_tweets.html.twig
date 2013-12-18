@@ -4,7 +4,7 @@
 
 {% block block %}
     <div class="prestacms-twitter-latest-tweets">
-        {% if tweets %}
+        {% if tweets is defined and tweets %}
             <ul>
                 {% for tweet in tweets %}
                     <li>{{ tweet | tweet_urlize }}</li>
