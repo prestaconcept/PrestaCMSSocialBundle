@@ -40,9 +40,17 @@ class FollowersCountBlockService extends BaseBlockService
     /**
      * {@inheritdoc}
      */
-    protected function getAdditionalFormSettings(FormMapper $formMapper, BlockInterface $block)
+    protected function getFormSettings(FormMapper $formMapper, BlockInterface $block)
     {
         $formSettings = array(
+            'title'            => array(
+                'title',
+                'text',
+                array(
+                    'required' => false,
+                    'label'    => $this->trans('form.label_title')
+                )
+            ),
             'twitter_username' => array(
                 'twitter_username',
                 'text',
@@ -53,7 +61,7 @@ class FollowersCountBlockService extends BaseBlockService
             ),
         );
 
-        return $formSettings + parent::getAdditionalFormSettings($formMapper, $block);
+        return $formSettings;
     }
 
     /**
@@ -85,6 +93,15 @@ class FollowersCountBlockService extends BaseBlockService
     {
         return array(
             'twitter_username' => null,
+            'title'            => $this->trans('presta_cms_social.block.twitter.followers_count.title'),
         );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function trans($id, array $parameters = array())
+    {
+        return $this->translator->trans($id, $parameters, 'PrestaCMSSocialBundle');
     }
 }
