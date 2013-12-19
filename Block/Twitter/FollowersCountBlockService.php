@@ -40,7 +40,7 @@ class FollowersCountBlockService extends BaseBlockService
     /**
      * {@inheritdoc}
      */
-    protected function getAdditionalFormSettings(FormMapper $formMapper, BlockInterface $block)
+    protected function getFormSettings(FormMapper $formMapper, BlockInterface $block)
     {
         $formSettings = array(
             'title'            => array(
@@ -61,7 +61,7 @@ class FollowersCountBlockService extends BaseBlockService
             ),
         );
 
-        return $formSettings + parent::getAdditionalFormSettings($formMapper, $block);
+        return $formSettings;
     }
 
     /**
