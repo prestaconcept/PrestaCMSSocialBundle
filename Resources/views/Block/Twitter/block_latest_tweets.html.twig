@@ -3,19 +3,17 @@
 {% trans_default_domain "PrestaCMSSocialBundle" %}
 
 {% block block %}
-    <div class="prestacms-twitter-latest-tweets">
-        {% if (settings.title|length) %}
-            <{{ settings.title_level }}>{{ settings.title|raw }}</{{ settings.title_level }}>
-        {% endif %}
+    {% if (settings.title|length) %}
+        <{{ settings.title_level }}>{{ settings.title|raw }}</{{ settings.title_level }}>
+    {% endif %}
 
-        {% if tweets is defined and tweets %}
-            <ul>
-                {% for tweet in tweets %}
-                    <li>{{ tweet | tweet_urlize }}</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            {{ "presta_cms_social.block.latest_tweets.no_tweets" | trans }}
-        {% endif %}
-    </div>
+    {% if tweets is defined and tweets %}
+        <ul>
+            {% for tweet in tweets %}
+                <li>{{ tweet | tweet_urlize }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {{ "presta_cms_social.block.latest_tweets.no_tweets" | trans }}
+    {% endif %}
 {% endblock %}
