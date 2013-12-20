@@ -93,15 +93,11 @@ class FollowersCountBlockService extends BaseBlockService
     {
         return array(
             'twitter_username' => null,
-            'title'            => $this->trans('presta_cms_social.block.twitter.followers_count.title'),
+            'title'            => $this->translator->trans(
+                'presta_cms_social.block.twitter.followers_count.title',
+                array(),
+                'PrestaCMSSocialBundle'
+            ),
         );
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function trans($id, array $parameters = array())
-    {
-        return $this->translator->trans($id, $parameters, 'PrestaCMSSocialBundle');
     }
 }

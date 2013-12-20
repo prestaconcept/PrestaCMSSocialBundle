@@ -21,6 +21,11 @@
                 <source>presta_cms_social.block.facebook.fans_count.text</source>
                 <target>{0} 0 fans|{1} 1 fan | ]1, Inf]%fans_count% fans</target>
             </trans-unit>
+
+            <trans-unit id="presta_cms_social.block.latest_tweets.no_tweets">
+                <source>presta_cms_social.block.latest_tweets.no_tweets</source>
+                <target>No tweet found</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
