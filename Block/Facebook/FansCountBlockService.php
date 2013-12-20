@@ -40,7 +40,7 @@ class FansCountBlockService extends BaseBlockService
     /**
      * {@inheritdoc}
      */
-    protected function getAdditionalFormSettings(FormMapper $formMapper, BlockInterface $block)
+    protected function getFormSettings(FormMapper $formMapper, BlockInterface $block)
     {
         $formSettings = array(
             'facebook_page_id' => array(
@@ -53,7 +53,7 @@ class FansCountBlockService extends BaseBlockService
             ),
         );
 
-        return $formSettings + parent::getAdditionalFormSettings($formMapper, $block);
+        return $formSettings;
     }
 
     /**
