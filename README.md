@@ -51,6 +51,7 @@ Thanks to
 
 Released under the MIT License
 
+[2]: https://github.com/prestaconcept/prestacms-sandbox
 [3]: https://groups.google.com/forum/?hl=fr&fromgroups#!forum/prestacms-devs
 [4]: http://prestaconcept.github.io/presta-cms-social/index.html
 [5]: http://sandbox.prestacms.com/
