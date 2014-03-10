@@ -1,0 +1,3 @@
+sonata_block:
+    blocks:
+        presta_cms_social.block.twitter.latest_tweets:
